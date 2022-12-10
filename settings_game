@@ -12,7 +12,7 @@ switch_left=pg.image.load('images/switch_left.png').convert()
 switch_left.set_colorkey((255,255,255))
 switch_right=pg.image.load('images/switch_right.png').convert()
 switch_right.set_colorkey((255,255,255))
-music_button=pg.image.load('images/settings_buttons/music_button.png').convert()
+music_button=pg.image.load('images/music_button.png').convert()
 
 
 class ChangeSound:
