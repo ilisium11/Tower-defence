@@ -42,12 +42,20 @@ class SelectedTower:
         self.alg_buttons=[]
         self.alg_buttons.append(AlgButton((self.width/2,self.first_alg_button_y+self.alg_button.height), SelectedTower.alg_buttons_img,self.surface,self.font_button, 'Ближайшая к выходу',tower.find_enemy))
         self.alg_buttons.append(AlgButton((self.width/2, self.first_alg_button_y + 2*self.alg_button.height), SelectedTower.alg_buttons_img, self.surface,self.font_button, 'Ближайшая к башне', tower.find_enemy1))
+        self.alg_buttons.append(AlgButton((self.width/2,self.first_alg_button_y+3*self.alg_button.height), SelectedTower.alg_buttons_img,self.surface,self.font_button, 'Наибольшее здоровье',tower.find_enemy2))
+        self.alg_buttons.append(AlgButton((self.width/2, self.first_alg_button_y + 4*self.alg_button.height), SelectedTower.alg_buttons_img, self.surface,self.font_button, 'Наибольший щит', tower.find_enemy3))
         if tower.find_target == tower.find_enemy:
             self.alg_buttons[0].image=SelectedTower.alg_buttons1_img
             self.alg_buttons_pressed = self.alg_buttons[0]
-        else:
+        elif tower.find_target==tower.find_enemy1:
             self.alg_buttons[1].image = SelectedTower.alg_buttons1_img
             self.alg_buttons_pressed = self.alg_buttons[1]
+        elif tower.find_target == tower.find_enemy2:
+            self.alg_buttons[2].image = SelectedTower.alg_buttons1_img
+            self.alg_buttons_pressed = self.alg_buttons[2]
+        elif tower.find_target==tower.find_enemy3:
+            self.alg_buttons[3].image = SelectedTower.alg_buttons1_img
+            self.alg_buttons_pressed = self.alg_buttons[3]
         self.sell_button = TextButton(self.sell_button_pos, self.upg_button_img,self.area,self.font_button, "Продать")
         if tower.number_upgrade + 1 == 3 and not tower.path:
             self.choice_button=[]
