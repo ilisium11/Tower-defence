@@ -95,10 +95,10 @@ class Levels:
         road.chaotic((Enemy1, 2), True, 20, 250, 150),road.two_lines((Enemy4,1),0.25,True,1,1,20),road.chaotic((Enemy5,1),True,1,100,200),road.chaotic((Enemy1,2),True,30,100,200),road.create_new_wave()
         road.chaotic((Enemy4,2),True,1,20,200),road.chaotic((Enemy5, 2), True, 1, 100, 150), road.chaotic((Enemy3,2),True,50,40,100),road.create_new_wave()
         road.chaotic((Enemy1, 3), False, 30, 150, 200), road.chaotic((Enemy3, 3), False, 1, 100, 300), road.chaotic((Enemy2, 3), False, 15, 250, 100), road.create_new_wave()
-        road.two_lines((Enemy2, 3), True,0.25, 20, 150, 200), road.chaotic((Enemy4,3),True,1,30,30),road.chaotic((Enemy5,3),True,1,100,150), road.create_new_wave()
+        road.chaotic((Enemy2, 3), True, 20, 150, 200), road.chaotic((Enemy4,3),True,1,30,30),road.chaotic((Enemy5,3),True,1,100,150), road.create_new_wave()
         road.chaotic((Enemy4, 3), True, 2, 30, 30), road.chaotic((Enemy5, 3),True,2,30,250),road.chaotic((Enemy3,3),True,50,50,100), road.create_new_wave()
         roads.append(WaveLoading(road.waves_list))
-        delay_level=[100,100,100,100,100,100,100,100]
+        delay_level=[600,600,600,600,600,600,600,600,600,600,600,600]
         health=1000
         money=700
         return health,money,roads,delay_level,closed_cells,bushes,stones
