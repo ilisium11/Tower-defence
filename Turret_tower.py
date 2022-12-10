@@ -118,12 +118,14 @@ class Turret(BasicTower):
         Turret.size_bullet = round(width / 25)
         Turret.speed_bullet=round(w*h/200000,1)
         Turret.tower_image = image1
+        Turret.image_list = []
         Turret.image_list.append(image1)
         Turret.image_list.append(image2)
         Turret.image_list.append(image3)
         Turret.image_list.append((path1_image1,path2_image1))
         Turret.image_list.append((path1_image2,path2_image2))
         Turret.image_list.append((path1_image3,path2_image3))
+        Turret.range_list = []
         Turret.range_list.append(range1)
         Turret.range_list.append(round(range1*1.1,1))
         Turret.range_list.append(round(range1 * 1.25, 1))
