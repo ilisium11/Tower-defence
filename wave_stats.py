@@ -92,7 +92,7 @@ class Levels:
         road.two_lines((Enemy1, 1), True, 0.25, 20, 150, 400), road.chaotic((Enemy3, 1), True, 5, 350,1), road.chaotic((Enemy2, 1), True, 1, 350,1), road.create_new_wave()
         road.chaotic((Enemy4, 1), False, 1, 150, 50),road.chaotic((Enemy1, 1), True, 30, 100, 300),road.chaotic((Enemy4, 1), False, 1, 150, 50),road.chaotic((Enemy1, 1), True, 30, 100, 1), road.create_new_wave()
         road.two_lines((Enemy3, 1), True,0.25, 50, 50, 150),road.two_lines((Enemy1, 2), False,0.25, 4, 50, 50),road.chaotic((Enemy2,2),False,5,400,1),road.create_new_wave()
-        road.chaotic((Enemy1, 2), True, 20, 250, 150),road.two_lines((Enemy4,1),0.25,True,1,1,20),road.chaotic((Enemy5,1),True,1,100,200),road.chaotic((Enemy1,2),True,30,100,200),road.create_new_wave()
+        road.chaotic((Enemy1, 2), True, 20, 250, 150),road.chaotic((Enemy4,1),True,2,1,20),road.chaotic((Enemy5,1),True,1,100,200),road.chaotic((Enemy1,2),True,30,100,200),road.create_new_wave()
         road.chaotic((Enemy4,2),True,1,20,200),road.chaotic((Enemy5, 2), True, 1, 100, 150), road.chaotic((Enemy3,2),True,50,40,100),road.create_new_wave()
         road.chaotic((Enemy1, 3), False, 30, 150, 200), road.chaotic((Enemy3, 3), False, 1, 100, 300), road.chaotic((Enemy2, 3), False, 15, 250, 100), road.create_new_wave()
         road.chaotic((Enemy2, 3), True, 20, 150, 200), road.chaotic((Enemy4,3),True,1,30,30),road.chaotic((Enemy5,3),True,1,100,150), road.create_new_wave()
