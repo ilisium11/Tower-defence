@@ -20,12 +20,11 @@ class LevelSelection:
         self.font=font
         self.menu_button_image = pg.transform.scale(button_image, (width_button, round(width_button/6,1)))
         self.window_road1=Levels.level1(width,height)
-        self.window_road1_selection_level=pg.transform.scale(self.window_road1,(round(width/4,1),round(height/4,1)))
-        self.center_window_road1=self.window_road1_selection_level.get_rect(center=(round(width/4,2),round(height/4,1)))
+        self.window_road1_selection_level=pg.transform.scale(self.window_road1,(round(width/2,1),round(height/2,1)))
+        self.center_window_road1=self.window_road1_selection_level.get_rect(center=(round(width/2,2),round(height/2,1)))
         self.level_choice = pg.transform.scale(level_choice,(width,height))
-        self.button1_selection_pos = (round(width/1.2,1),round(height/4,2))
-        self.button2_selection_pos = (round(width/1.2,1), round(height*3/4,2))
-        self.back_button_settings_pos = (round(width / 9, 2), round(height / 1.05, 2))
+        self.button1_selection_pos = (round(width/2,1),round(height/1.2,2))
+        self.back_button_settings_pos = (round(width / 9, 2), round(height / 1.1, 2))
         self.game=None
         self.return_menu=None
         self.restart=None
@@ -39,7 +38,6 @@ class LevelSelection:
         buttons=[]
         button_cansel=(TextButton(self.back_button_settings_pos, self.menu_button_image, self.level_choice,self.font, 'Назад'))
         buttons.append(LevelButton(self.button1_selection_pos,self.menu_button_image,self.level_choice,"Уровень 1",self.font,Levels.level1))
-        buttons.append(LevelButton(self.button2_selection_pos, self.menu_button_image, self.level_choice, "Уровень 2",self.font,Levels.level2))
         self.level_choice.blit(self.window_road1_selection_level, self.center_window_road1)
         for button in buttons:
             button.draw()
