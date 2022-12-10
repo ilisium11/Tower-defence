@@ -99,7 +99,7 @@ class Levels:
         road.chaotic((Enemy4, 3), True, 2, 30, 30), road.chaotic((Enemy5, 3),True,2,30,250),road.chaotic((Enemy3,3),True,50,50,100), road.create_new_wave()
         roads.append(WaveLoading(road.waves_list))
         delay_level=[600,600,600,600,600,600,600,600,600,600,600,600]
-        health=1000
+        health=20
         money=700
         return health,money,roads,delay_level,closed_cells,bushes,stones
 
