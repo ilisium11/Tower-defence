@@ -25,7 +25,6 @@ Yellow=(255,255,0)
 
 class Shotgun(BasicTower):
     tower_image=None
-    images_for_selected = []
     name='Дробовик'
     damage_list=[10,15,22,(60,30),(80,40),(115,50)]
     fire_rate_list=[90,90,90,(150,130),(150,130),(150,130)]
@@ -122,14 +121,14 @@ class Shotgun(BasicTower):
         Shotgun.size_bullet=round(width/20)
         Shotgun.speed_bullet = round(w * h / 440000, 1)
         Shotgun.tower_image = image1
-        Shotgun.images_for_selected.append(pg.transform.scale(tower_image1,(width*1.5,height*1.5)))
-        Shotgun.images_for_selected.append(pg.transform.scale(tower_image2, (width*1.5, height*1.5)))
+        Shotgun.image_list = []
         Shotgun.image_list.append(image1)
         Shotgun.image_list.append(image2)
         Shotgun.image_list.append(image3)
         Shotgun.image_list.append((path1_image1,path2_image1))
         Shotgun.image_list.append((path1_image2,path2_image2))
         Shotgun.image_list.append((path1_image3,path2_image3))
+        Shotgun.range_list = []
         Shotgun.range_list.append(range1)
         Shotgun.range_list.append(range1)
         Shotgun.range_list.append(round(range1*1.1,1))
