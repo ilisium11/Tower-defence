@@ -187,10 +187,11 @@ class Game:
         self.closed_cells.remove((x//self.width_cell,y//self.width_cell))
 
     def del_object(self):
-        self.player.money -= self.selected_obj_terrain.cost
-        self.objects.remove(self.selected_obj_terrain.obj)
-        self.closed_cells.remove(self.selected_obj_terrain.pos_cell)
-        self.selected_obj_terrain = None
+        if self.player.money>=self.selected_obj_terrain.cost:
+            self.player.money -= self.selected_obj_terrain.cost
+            self.objects.remove(self.selected_obj_terrain.obj)
+            self.closed_cells.remove(self.selected_obj_terrain.pos_cell)
+            self.selected_obj_terrain = None
 
     def setup_stars(self):
         health=self.player.health
@@ -253,28 +254,6 @@ class Game:
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 sys.exit()
-            elif event.type == pg.KEYDOWN:
-                if event.key == pg.K_q:
-                    if self.true_buttons:
-                        self.true_buttons = None
-                    elif not self.moving_object:
-                        self.true_buttons = True
-                elif event.key == pg.K_w:
-                    if self.moving_object and self.moving_object.true_place:
-                        self.new_tower()
-                elif event.key == pg.K_r:
-                    self.moving_object = Moving(self.menu_towers.button_tower3.image_tower, self.surface)
-                    self.true_buttons = None
-                    self.tower = self.menu_towers.button_tower3.tower
-                elif event.key == pg.K_t:
-                    self.moving_object = Moving(self.menu_towers.button_tower2.image_tower, self.surface)
-                    self.true_buttons = None
-                    self.tower = self.menu_towers.button_tower2.tower
-                elif event.key == pg.K_e:
-                    if self.sel_tower:
-                        self.sel_tower.tower.upgrade()
-                elif event.key == pg.K_SPACE:
-                    sys.exit()
             elif event.type == pg.MOUSEBUTTONDOWN:
                 mouse = pg.mouse.get_pos()
                 if self.menu_game.collide_calling_button(mouse):
