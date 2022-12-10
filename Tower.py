@@ -93,7 +93,7 @@ class BasicTower:
                     target=enemy
         self.set_target(target)
     
-        def find_enemy2(self,wave):
+    def find_enemy2(self,wave):
         x1, y1 = self.x, self.y
         radius = self.radius
         target=None
