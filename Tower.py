@@ -92,7 +92,35 @@ class BasicTower:
                     min_rast=enemy.distance_to_end
                     target=enemy
         self.set_target(target)
+    
+        def find_enemy2(self,wave):
+        x1, y1 = self.x, self.y
+        radius = self.radius
+        target=None
+        points=0
+        for enemy in wave:
+            x, y = enemy.x, enemy.y
+            rast = (x1 - x) * (x1 - x) + (y1 - y) * (y1 - y)
+            if radius * radius >= rast:
+                if enemy.health>points:
+                    points=enemy.health
+                    target=enemy
+        self.set_target(target)
 
+    def find_enemy3(self, wave):
+        x1, y1 = self.x, self.y
+        radius = self.radius
+        target = None
+        points = 0
+        for enemy in wave:
+            x, y = enemy.x, enemy.y
+            rast = (x1 - x) * (x1 - x) + (y1 - y) * (y1 - y)
+            if radius * radius >= rast:
+                if enemy.shield > points:
+                    points = enemy.shield
+                    target = enemy
+        self.set_target(target)
+    
     def draw(self,surface):
         center = self.q.get_rect(center=(self.x, self.y))
         surface.blit(self.q, center)
