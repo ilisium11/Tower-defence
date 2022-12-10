@@ -143,12 +143,14 @@ class Laser(BasicTower):
         path2_image3 = pg.transform.scale(tower_path2_image3, (width, height))
         range1 = round(w/4.5, 1)
         Laser.tower_image = image1
+        Laser.image_list=[]
         Laser.image_list.append(image1)
         Laser.image_list.append(image2)
         Laser.image_list.append(image3)
         Laser.image_list.append((path1_image1,path2_image1))
         Laser.image_list.append((path1_image2, path2_image2))
         Laser.image_list.append((path1_image3, path2_image3))
+        Laser.range_list=[]
         Laser.range_list.append(range1)
         Laser.range_list.append(round(range1*1.1,1))
         Laser.range_list.append(round(range1*1.1,1))
