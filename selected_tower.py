@@ -62,7 +62,7 @@ class SelectedTower:
             self.upg_button=TextButton(self.upgrade_button_pos, self.upg_button_img,self.area,self.font_button, "Улучшить "+str(self.cost_upgrade)+"")
             self.upg_button.draw()
         else:
-            self.upg_button=TextButton(self.upgrade_button_pos, self.upg_button_img,self.area,self.font_button, "Максимум")
+            self.upg_button=None
         self.sell_button.draw()
         self.x=0
         self.y=0
@@ -94,6 +94,8 @@ class SelectedTower:
         if hasattr(tower, 'count_fraction'):
             fraction_text=self.font_text.render("Дробин  "+str(tower.count_fraction),True,Black)
             self.area.blit(fraction_text, (self.text_x, self.first_text_y + 6 * self.difference_text_y))
+            destruction_text=self.font_text.render("Разр. брони (1 дробь) "+str(tower.destruction_armor*100),True,Black)
+            self.area.blit(destruction_text, (self.text_x, self.first_text_y + 7 * self.difference_text_y))
         elif hasattr(tower, 'kindling_speed'):
             kindling_speed_text = self.font_text.render("Скорость разжигания  " + str(tower.kindling_speed*10), True, Black)
             self.area.blit(kindling_speed_text , (self.text_x, self.first_text_y + 6 * self.difference_text_y))
@@ -125,8 +127,9 @@ class SelectedTower:
             elif self.choice_button[1].collide(pos[0],pos[1]):
                 self.tower.path = 2
                 self.__init__(self.surface,self.tower)
-        elif self.upg_button.collide(pos[0],pos[1]):
-            return True
+        elif self.upg_button:
+            if self.upg_button.collide(pos[0],pos[1]):
+                return True
 
     def collide_sell_button(self, mouse):
         pos = self.pos_click_area(mouse)
@@ -164,7 +167,7 @@ class SelectedTower:
         SelectedTower.name_pos=(round(width*0.73,1),round(height/17.5,1))
         SelectedTower.text_x=round(width/2,1)
         SelectedTower.first_text_y=round(height/7,1)
-        SelectedTower.difference_text_y=round(height/14,1)
+        SelectedTower.difference_text_y=round(height/15,1)
         SelectedTower.font_button = pg.font.Font('font1/font.ttf', round(height / 19))
         SelectedTower.font_name = pg.font.Font('font1/font.ttf', round(height / 13))
         SelectedTower.font_text = pg.font.Font('font1/font.ttf', round(height / 35))
