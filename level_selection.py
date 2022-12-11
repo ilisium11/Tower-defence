@@ -15,6 +15,8 @@ class LevelSelection:
         self.surface=surface
         width=surface.get_width()
         height=surface.get_height()
+        Levels.scaling_attributes(width_cell)
+        Game.scaling_attributes(width_cell, width, height)
         width_button=round(width / 6, 1)
         self.width_cell=(round((width/16)*0.5,1))
         self.font=font
