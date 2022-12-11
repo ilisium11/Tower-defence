@@ -11,7 +11,7 @@ level_choice=pg.image.load("images/selection_level.png").convert()
 
 class LevelSelection:
 
-    def __init__(self,surface,button_image,font):
+    def __init__(self,surface,width_cell,button_image,font):
         self.surface=surface
         width=surface.get_width()
         height=surface.get_height()
