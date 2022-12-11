@@ -57,6 +57,8 @@ class Enemy5(Enemy):
                 if self.rect_area_regen.colliderect(enemy.rect):
                     if enemy.shield<enemy.max_shield:
                         enemy.shield+=self.shield_regen
+                        if enemy.shield>enemy.max_shield:
+                            enemy.shield=enemy.max_shield
         else:
             self.counter_delay+=1
 
