@@ -31,7 +31,7 @@ class Shotgun(BasicTower):
     range_list=[]
     punching_list=[0.3,0.4,0.55,(0,0.2),(0,0.2),(0,0.2)]
     damage_shield_list=[0.2,0.25,0.3,(0.15,0),(0.15,0),(0.15,0)]
-    destruction_armor_list=[0,0,0,(0,0.004),(0,0.005),(0,0.006)]
+    destruction_armor_list=[0,0,0,(0,0.004),(0,0.006),(0,0.008)]
     color_bullet_list=[Yellow,Yellow,Yellow,Yellow,Yellow,Yellow]
     image_list=[]
     speed_bullet=None
