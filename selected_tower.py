@@ -94,7 +94,7 @@ class SelectedTower:
         if hasattr(tower, 'count_fraction'):
             fraction_text=self.font_text.render("Дробин  "+str(tower.count_fraction),True,Black)
             self.area.blit(fraction_text, (self.text_x, self.first_text_y + 6 * self.difference_text_y))
-            destruction_text=self.font_text.render("Разр. брони (1 дробь) "+str(tower.destruction_armor*100),True,Black)
+            destruction_text=self.font_text.render("Разр. брони (1 дробь) "+str(tower.destruction_armor*100)+"%",True,Black)
             self.area.blit(destruction_text, (self.text_x, self.first_text_y + 7 * self.difference_text_y))
         elif hasattr(tower, 'kindling_speed'):
             kindling_speed_text = self.font_text.render("Скорость разжигания  " + str(tower.kindling_speed*10), True, Black)
