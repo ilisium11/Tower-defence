@@ -1,8 +1,6 @@
 import pygame as pg
 import sys
 from button import TextButton
-from game import Game
-from wave_stats import Levels
 from settings_game import Settings
 from level_selection import LevelSelection
 YELLOW=(255,255,0)
@@ -20,8 +18,6 @@ class Menu:
         width=size[0]
         height=size[1]
         width_cell=(round((width/16)*0.5,1))
-        Game.scaling_attributes(width_cell,width, height)
-        Levels.scaling_attributes(width_cell)
         self.surface = pg.display.set_mode(size,pg.FULLSCREEN)
         pg.display.set_caption("Tower defence")
         self.font = pg.font.SysFont('arial', round(height/22))
@@ -30,7 +26,7 @@ class Menu:
         height_button=round(width_button/6,1)
         self.menu_button_image = pg.transform.scale(button_image,(width_button,height_button))
         self.settings = Settings(self.surface,self.menu_button_image,self.font)
-        self.selection_level=LevelSelection(self.surface,self.menu_button_image,self.font)
+        self.selection_level=LevelSelection(width_cell,self.surface,self.menu_button_image,self.font)
         y_pos=round(height/1.4,1)
         self.button1_menu_pos = (round(width/2,1),y_pos)
         self.button2_menu_pos = (round(width/2,1),y_pos+height_button*1.3)
