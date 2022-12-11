@@ -11,8 +11,8 @@ class Enemy4(Enemy):
     image_for_selected = None
     width=None
     half_width=None
-    health=[3000,12000,48000]
-    health_regen=[10,40,120]
+    health=[5000,15000,60000]
+    health_regen=[10,40,110]
     shield_points=[500,2000,8000]
     cost_money=[180,540,1800]
     cost_health=5
