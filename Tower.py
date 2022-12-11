@@ -104,8 +104,8 @@ class BasicTower:
             x, y = enemy.x, enemy.y
             rast = (x1 - x) * (x1 - x) + (y1 - y) * (y1 - y)
             if radius * radius >= rast:
-                if enemy.max_health>points:
-                    points=enemy.max_health
+                if enemy.health>points:
+                    points=enemy.health
                     target=enemy
         self.set_target(target)
 
@@ -120,8 +120,8 @@ class BasicTower:
             x, y = enemy.x, enemy.y
             rast = (x1 - x) * (x1 - x) + (y1 - y) * (y1 - y)
             if radius * radius >= rast:
-                if enemy.max_shield > points:
-                    points = enemy.max_shield
+                if enemy.shield > points:
+                    points = enemy.shield
                     target = enemy
                 elif enemy.distance_to_end<min_rast:
                     min_rast=enemy.distance_to_end
