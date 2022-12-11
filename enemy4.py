@@ -57,6 +57,8 @@ class Enemy4(Enemy):
                 if self.rect_area_regen.colliderect(enemy.rect):
                     if enemy.health<enemy.max_health:
                         enemy.health+=self.health_regen
+                        if enemy.health>enemy.max_health:
+                            enemy.health=enemy.max_health
         else:
             self.counter_delay+=1
 
