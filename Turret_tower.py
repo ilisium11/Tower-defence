@@ -36,7 +36,7 @@ class Turret(BasicTower):
     speed_bullet=None
     size_bullet=None
     guns_list=[]
-    cost_list=[100,150,200,500,700,1000]
+    cost_list=[100,150,200,530,740,1050]
 
     def __init__(self,x,y,surface):
         self.path=None
