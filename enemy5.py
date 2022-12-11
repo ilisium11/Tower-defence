@@ -13,7 +13,7 @@ class Enemy5(Enemy):
     half_width=None
     health=[1500,6000,15000]
     shield_regen=[8,32,100]
-    shield_points=[2000,8000,45000]
+    shield_points=[3000,12000,55000]
     cost_money=[180,540,1800]
     cost_health=5
     armor=[0.15,0.35,0.5]
