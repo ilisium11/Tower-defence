@@ -1,5 +1,7 @@
 import pygame as pg
 import math
+from enemy4 import Enemy4
+from enemy5 import Enemy5
 Aqua=(0,255,255)
 
 
@@ -102,8 +104,8 @@ class BasicTower:
             x, y = enemy.x, enemy.y
             rast = (x1 - x) * (x1 - x) + (y1 - y) * (y1 - y)
             if radius * radius >= rast:
-                if enemy.health>points:
-                    points=enemy.health
+                if enemy.max_health>points:
+                    points=enemy.max_health
                     target=enemy
         self.set_target(target)
 
@@ -111,16 +113,70 @@ class BasicTower:
         x1, y1 = self.x, self.y
         radius = self.radius
         target = None
+        target1=None
         points = 0
+        min_rast=10000
         for enemy in wave:
             x, y = enemy.x, enemy.y
             rast = (x1 - x) * (x1 - x) + (y1 - y) * (y1 - y)
             if radius * radius >= rast:
-                if enemy.shield > points:
-                    points = enemy.shield
+                if enemy.max_shield > points:
+                    points = enemy.max_shield
                     target = enemy
-        self.set_target(target)
-    
+                elif enemy.distance_to_end<min_rast:
+                    min_rast=enemy.distance_to_end
+                    target1=enemy
+        if target:
+            self.set_target(target)
+        else:
+            self.set_target(target1)
+
+    def find_enemy4(self, wave):
+        x1, y1 = self.x, self.y
+        radius = self.radius
+        target = None
+        target1 = None
+        points = 0
+        min_rast=10000
+        for enemy in wave:
+            x, y = enemy.x, enemy.y
+            rast = (x1 - x) * (x1 - x) + (y1 - y) * (y1 - y)
+            if radius * radius >= rast:
+                if type(enemy)==Enemy4:
+                    if enemy.max_health>points:
+                        points=enemy.max_health
+                        target=enemy
+                elif enemy.distance_to_end<min_rast:
+                    min_rast=enemy.distance_to_end
+                    target1=enemy
+        if target:
+            self.set_target(target)
+        else:
+            self.set_target(target1)
+
+    def find_enemy5(self, wave):
+        x1, y1 = self.x, self.y
+        radius = self.radius
+        target = None
+        target1 = None
+        points = 0
+        min_rast=10000
+        for enemy in wave:
+            x, y = enemy.x, enemy.y
+            rast = (x1 - x) * (x1 - x) + (y1 - y) * (y1 - y)
+            if radius * radius >= rast:
+                if type(enemy)==Enemy5:
+                    if enemy.max_health>points:
+                        points=enemy.max_health
+                        target=enemy
+                elif enemy.distance_to_end<min_rast:
+                    min_rast=enemy.distance_to_end
+                    target1=enemy
+        if target:
+            self.set_target(target)
+        else:
+            self.set_target(target1)
+
     def draw(self,surface):
         center = self.q.get_rect(center=(self.x, self.y))
         surface.blit(self.q, center)
